@@ -1,0 +1,30 @@
+<button type="button"(click)="onClickMe()">Click Me!</button>
+
+<div *ngIf="(wasClicked % 2)==1">
+  <h2>{{clickMessage}}</h2>
+  <button type="button"(click)="apology()">Please forgive me</button>
+  <h2>{{apologyMessage}}</h2>
+</div>
+
+<button type="button"(click)="onShowHover()">Hover names</button>
+<div *ngIf="(showHover % 2)==1">
+  <ul>
+    <li
+      *ngFor="let name of names"
+      #hoverName
+      (mouseenter)="onMouseEnter(hoverName)"
+      (mouseleave)="onMouseOut(hoverName)">
+      {{name}}
+    </li>
+  </ul>
+</div>
+
+<button type="button"(click)="onInput()">Input</button>
+<div *ngIf="(showInput%2) == 1">
+  <input type="text" #name placeholder="Hover name" (blur)="getName(name.value)"/> <br><br>
+  <input type="number" #id placeholder="Request id" (keyup.enter)="getId(id.valueAsNumber)" /><br><br>
+  <button type="submit"(click)="submit()">Submit</button>
+  <div *ngIf="submitted!=0">
+    {{submitmsg}}
+  </div>
+</div>

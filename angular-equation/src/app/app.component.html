@@ -1,0 +1,23 @@
+<form class="ui large form segment">
+  <h3 class="ui header">Solve Quadratic Equation a*x^2 + b*x + c = 0</h3>
+
+  <div class="field">
+    <label for="coefA">a:</label>
+    <input name="coefA" #newCoefA>
+  </div>
+  <div class="field">
+    <label for="coefB">b:</label>
+    <input name="coefB" #newCoefB>
+  </div>
+  <div class="field">
+    <label for="coefC">c:</label>
+    <input name="coefC" #newCoefC>
+  </div>
+</form>
+<button (click) = "getEquation(newCoefA, newCoefB, newCoefC)" class="ui positive right floated button">
+  SolveEquation
+</button>
+<div class="ui grid posts">
+  <app-solution *ngFor="let solution of solutions" [solution]="solution">
+  </app-solution>
+</div>

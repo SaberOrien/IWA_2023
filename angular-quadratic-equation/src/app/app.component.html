@@ -1,0 +1,23 @@
+<form class="ui large form segment">
+  <h3 class="ui header">Solve Quadratic Equation</h3>
+  <div class="field">
+    <label for="coefA">a:</label>
+    <input name="coefA" #inputA>
+  </div>
+  <div class="field">
+    <label for="coefB">b:</label>
+    <input name="coefB" #inputB>
+  </div>
+  <div class="field">
+    <label for="coefC">c:</label>
+    <input name="coefC" #inputC>
+  </div>
+  <button (click)="solveEquation(inputA, inputB, inputC)" class="ui positive right floated button">
+    Solve Equation
+  </button>
+</form>
+<div class="ui grid posts">
+  <app-equation></app-equation>
+</div>
+
+
